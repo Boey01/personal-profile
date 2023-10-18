@@ -16,7 +16,6 @@ export class DarkModeService {
   toggleDarkMode(): void {
     this.darkMode = !this.darkMode;
     document.body.classList.toggle('dark');
-    console.log('Dark mode toggled! is dark mode? :', this.darkMode);
   }
 
   getBrightnessValue(): number {
@@ -25,6 +24,5 @@ export class DarkModeService {
 
   setBrightnessValue(bv: number) {
     this.brightnessValue = bv;
-    console.log(bv);
   }
 }
