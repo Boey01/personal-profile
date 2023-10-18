@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.dark {
-    @apply transition-colors duration-1000;
-  }
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
