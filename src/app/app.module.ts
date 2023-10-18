@@ -14,11 +14,8 @@ import { StickyBarComponent } from './sticky-bar/sticky-bar.component';
     BottomSectionComponent,
     StickyBarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
