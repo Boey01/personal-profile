@@ -15,4 +15,11 @@ export class StickyBarComponent {
   toggleDarkMode() {
     this.darkmodeService.toggleDarkMode();
   }
+
+  sliderValueChanged(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    let brightness: number = +value;
+
+    this.darkmodeService.setBrightnessValue(brightness);
+  }
 }
