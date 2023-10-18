@@ -1,3 +1,12 @@
 <div
-  class="fixed bottom-0 left-0 right-0 z-99 bg-black text-white flex justify-between items-center p-4 mb-5 rounded-3xl md:mb-10 mx-auto w-60"
-></div>
+  class="fixed bottom-0 left-0 right-0 z-99 bg-black dark:bg-white text-white dark:text-black flex justify-between items-center p-4 pb-3 mb-5 rounded-3xl md:mb-10 mx-auto w-60 transition-colors duration-1000"
+>
+  <button (click)="toggleDarkMode()">
+    <span *ngIf="getDarkMode()" class="material-symbols-outlined">
+      light_mode
+    </span>
+    <span *ngIf="!getDarkMode()" class="material-symbols-outlined">
+      dark_mode
+    </span>
+  </button>
+</div>
