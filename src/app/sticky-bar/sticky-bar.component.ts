@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Renderer2, ElementRef } from '@angular/core';
 import { DarkModeService } from '../dark-mode.service';
-
 @Component({
   selector: 'app-sticky-bar',
   templateUrl: './sticky-bar.component.html',
@@ -8,7 +7,12 @@ import { DarkModeService } from '../dark-mode.service';
 })
 export class StickyBarComponent {
   darkmodeService: DarkModeService = inject(DarkModeService);
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+  ) {}
 
+  //dark mode service functions
   getDarkMode() {
     return this.darkmodeService.getDarkMode();
   }
@@ -21,5 +25,20 @@ export class StickyBarComponent {
     let brightness: number = +value;
 
     this.darkmodeService.setBrightnessValue(brightness);
+    this.setSliderBackground(brightness);
+  }
+
+  setSliderBackground(brightness: number) {
+    const slider = this.el.nativeElement.querySelector('#brightness-slider');
+
+    // Define the linear gradient background based on the brightness value
+    const gradient = `linear-gradient(to right, #6083E8 ${brightness}%, #dedede ${brightness}%)`;
+
+    // Set the background style for the slider
+    this.renderer.setStyle(slider, 'background', gradient);
+  }
+
+  ngAfterViewInit() {
+    this.setSliderBackground(50);
   }
 }
