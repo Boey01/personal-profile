@@ -8,6 +8,9 @@ module.exports = {
       textShadow: {
         DEFAULT: " 0px 0px 20px var(--tw-shadow-color)",
       },
+      fontSize: {
+        "4.5xl": "2.5rem",
+      },
     },
   },
   plugins: [
