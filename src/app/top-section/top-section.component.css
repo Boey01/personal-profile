@@ -5,3 +5,11 @@
 .resume{
     background-image: url('../../assets/cv.svg');
 }
+
+.linkedin{
+    background-image: url('../../assets/linkedin.svg');
+}
+
+.github{
+    background-image: url('../../assets/github.svg');
+}
