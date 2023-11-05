@@ -13,3 +13,42 @@
 .github{
     background-image: url('../../assets/github.svg');
 }
+
+.card-container{
+    height: 22rem;
+    max-height: 25rem;
+    perspective: 50rem;
+}
+
+.card{
+height: 100%;
+width:100%;
+position:relative;
+transition:transform 1000ms;
+transform-style: preserve-3d;
+}
+
+.card-container:hover > .card{
+cursor:pointer;
+transform: rotateY(180deg);
+}
+
+.front-card,
+.back-card{
+    height: 100%;
+    width:100%;
+    position:absolute;
+    backface-visibility: hidden;
+}
+
+.front-card{
+background-image: url("../../assets/Saly-8.svg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.back-card{
+    transform: rotateY(180deg);
+}
+
