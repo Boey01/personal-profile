@@ -17,21 +17,22 @@
 .card-container{
     height: 22rem;
     max-height: 25rem;
-    perspective: 50rem;
+    perspective: 80rem;
 }
 
 .card{
 height: 100%;
 width:100%;
 position:relative;
-transition:transform 1000ms;
+transition:transform 0.8s;
+transform-origin: center right;
 transform-style: preserve-3d;
 }
 
-.card-container:hover > .card{
-cursor:pointer;
-transform: rotateY(180deg);
+.card.is-flipped{
+transform: translateX(-100%) rotateY(180deg);
 }
+
 
 .front-card,
 .back-card{
@@ -52,3 +53,12 @@ background-size: cover;
     transform: rotateY(180deg);
 }
 
+.slide-in {
+    transform: translateY(0);
+    transition: transform 1s;
+  }
+  
+  .card.slide-in {
+    transform: translateY(100%);
+    transition: transform 1s;
+  }

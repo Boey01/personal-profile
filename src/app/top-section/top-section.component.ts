@@ -7,20 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopSectionComponent implements OnInit {
   ngOnInit() {
-    const card = document.querySelector('.flip-card');
-    const cardInner = document.querySelector('.flip-card-inner');
+    const card = document.querySelector('.card');
 
-    // Function to toggle the card flip
+    if (card) {
+      card.classList.add('slide-in');
+    }
+
     function toggleCardFlip() {
       if (card) {
-        card.classList.toggle('card-flipped');
+        card.classList.toggle('is-flipped');
       }
     }
 
-    // Flip the card on load after 0.5 seconds
     setTimeout(() => {
       toggleCardFlip();
-    }, 500);
+    }, 1000);
+
+    setTimeout(() => {
+      if (card) {
+        card.classList.remove('slide-in');
+      }
+    }, 0);
 
     // Flip the card on click
     if (card) {
