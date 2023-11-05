@@ -29,7 +29,7 @@ export class TopSectionComponent implements OnInit {
       }
     }, 0);
 
-    // Flip the card on click
+    // card flip on click
     if (card) {
       card.addEventListener('click', toggleCardFlip);
     }

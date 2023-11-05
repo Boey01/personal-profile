@@ -55,7 +55,6 @@ background-size: cover;
 
 .slide-in {
     transform: translateY(0);
-    transition: transform 1s;
   }
   
   .card.slide-in {
