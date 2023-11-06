@@ -31,11 +31,15 @@ input[type="range"]:disabled {
 
 .expanded {
     transform: translateX(0);
+    left: 0;
+    right: 0;
 }
 
 .collapsed {
-    width: 60px;
-    /* transform: translateX(100%); */
+    width: 3.8rem;
+    height: 3.8rem;
+    left: 100%;
+    transform: translate(-100%, 0);
 }
 
 .collapsed button,
@@ -44,5 +48,5 @@ input[type="range"]:disabled {
 }
 
 .the-bar {
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
