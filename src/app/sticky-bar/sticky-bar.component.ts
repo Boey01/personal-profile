@@ -44,16 +44,16 @@ export class StickyBarComponent {
     this.setSliderBackground(50);
   }
 
-  expandBar(event: Event) {
-    const target = event.target as HTMLElement;
+  toggleBar(event: Event, arrowbutton: boolean) {
+    if (arrowbutton) {
+      event.stopPropagation();
+      this.isExpanded = false;
+    } else {
+      const target = event.target as HTMLElement;
 
-    if (target.classList.contains('collapsed')) {
-      this.isExpanded = true;
+      if (target.classList.contains('collapsed')) {
+        this.isExpanded = true;
+      }
     }
-  }
-
-  collapseBar(event: Event) {
-    event.stopPropagation();
-    this.isExpanded = false;
   }
 }

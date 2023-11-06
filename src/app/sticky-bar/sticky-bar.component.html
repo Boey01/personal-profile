@@ -2,7 +2,7 @@
   class="collapsed the-bar fixed bottom-0 left-0 right-0 z-10 bg-black dark:bg-gray-50 text-white dark:text-gray-800 flex items-center justify-center p-4 pb-3 mb-5 rounded-3xl md:mb-10 mx-auto w-60 transition-colors duration-1000"
   [class.expanded]="isExpanded"
   [class.collapsed]="!isExpanded"
-  (click)="expandBar($event)"
+  (click)="toggleBar($event, false)"
 >
   <button (click)="toggleDarkMode()">
     <span *ngIf="getDarkMode()" class="material-symbols-outlined">
@@ -25,7 +25,7 @@
     />
   </div>
 
-  <button class="collapse-button ml-3 pt-0.5" (click)="collapseBar($event)">
+  <button class="collapse-button ml-3 pt-0.5" (click)="toggleBar($event, true)">
     <span class="material-symbols-outlined"> arrow_right </span>
   </button>
 </div>
