@@ -12,6 +12,8 @@ export class StickyBarComponent {
     private el: ElementRef,
   ) {}
 
+  isExpanded = false;
+
   //dark mode service functions
   getDarkMode() {
     return this.darkmodeService.getDarkMode();
@@ -40,5 +42,18 @@ export class StickyBarComponent {
 
   ngAfterViewInit() {
     this.setSliderBackground(50);
+  }
+
+  expandBar(event: Event) {
+    const target = event.target as HTMLElement;
+
+    if (target.classList.contains('collapsed')) {
+      this.isExpanded = true;
+    }
+  }
+
+  collapseBar(event: Event) {
+    event.stopPropagation();
+    this.isExpanded = false;
   }
 }

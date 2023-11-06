@@ -1,5 +1,4 @@
-input[type="range"]
-{
+input[type="range"] {
     appearance: none;
     background: transparent;
     background-color: #dedede;
@@ -7,28 +6,43 @@ input[type="range"]
     border-radius: 0.5rem;
 }
 
-input[type="range"]::-webkit-slider-thumb
-input[type="range"]::-moz-slider-thumb
-input[type="range"]::-ms-slider-thumb
-{
-appearance: none;
-background-color: #3364f5;
-height: 1rem;
-width: 1rem;
-border-radius: 0.5rem;
-pointer-events: auto;
-cursor: pointer;
+input[type="range"]::-webkit-slider-thumb input[type="range"]::-moz-slider-thumb input[type="range"]::-ms-slider-thumb {
+    appearance: none;
+    background-color: #3364f5;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 0.5rem;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
-#progress-fill{
-    width:50%;
+#progress-fill {
+    width: 50%;
     height: 0.45rem;
     background-color: #718de0;
     border-radius: 0.5rem;
 }
 
 input[type="range"]:disabled {
-	filter: grayscale(1);
-	opacity: 0.8;
-	cursor: not-allowed;
+    filter: grayscale(1);
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.expanded {
+    transform: translateX(0);
+}
+
+.collapsed {
+    width: 60px;
+    /* transform: translateX(100%); */
+}
+
+.collapsed button,
+.collapsed input {
+    display: none;
+}
+
+.the-bar {
+    transition: all 1s ease-in-out;
 }
